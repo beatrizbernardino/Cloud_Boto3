@@ -187,14 +187,14 @@ def cria_scaling(ACCESS_KEY, SECRET_KEY, ec2_nv, lb_nv, sc_nv_id, vpc_id, user_d
 
         create_tg = elb_client.create_target_group(Name=tg_nv,
                                                    Protocol='HTTP',
-                                                   Port=80,
+                                                   Port=8080,
                                                    VpcId=vpc_id)
 
         tgId = create_tg['TargetGroups'][0]['TargetGroupArn']
 
         print('Criando Listener')
         create_listener_response = elb_client.create_listener(LoadBalancerArn=lbId,
-                                                              Protocol='HTTP', Port=8080,
+                                                              Protocol='HTTP', Port=80,
                                                               DefaultActions=[{'Type': 'forward',
                                                                                'TargetGroupArn': tgId}])
 

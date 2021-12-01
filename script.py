@@ -66,7 +66,7 @@ ohio_ip = response['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['A
 user_data_nv = '''#!/bin/bash
 cd /
 sudo apt update
-git clone https://github.com/raulikeda/tasks.git
+git clone https://github.com/beatrizbernardino/tasks.git
 cd tasks
 sudo sed -i s/"'HOST': 'node1',"/"'HOST': '{0}',"/g  portfolio/settings.py
 sudo sed -i s/"'PASSWORD': 'cloud',"/"'PASSWORD': '',"/g  portfolio/settings.py
