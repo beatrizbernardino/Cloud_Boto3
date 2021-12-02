@@ -1,0 +1,45 @@
+2021-12-02 11:42:12,133 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2021-12-02 11:42:12,416 - INFO - Deletando dependências
+2021-12-02 11:42:13,417 - INFO - Deletando Listener
+2021-12-02 11:42:13,613 - INFO - Deletando Load Balancer
+2021-12-02 11:42:14,027 - INFO - Deletando Target Group
+2021-12-02 11:42:14,204 - INFO - Deletando auto scaling
+2021-12-02 11:42:16,118 - INFO - Deletando Launch Config
+2021-12-02 11:42:16,633 - INFO - Todas as depêndencias foram deletadas
+2021-12-02 11:42:17,700 - INFO - Criando Key pair para us-east-2
+2021-12-02 11:42:18,668 - INFO - Key pair criada com sucesso!
+2021-12-02 11:42:18,958 - INFO - Apagando Instâncias não utilizadas
+2021-12-02 11:42:50,189 - INFO - Deletas com sucesso
+2021-12-02 11:42:50,189 - INFO - Criando Security Group para us-east-2
+2021-12-02 11:42:51,266 - INFO - Liberando portas de acesso
+2021-12-02 11:42:52,024 - INFO - Security Group criado com sucesso
+2021-12-02 11:42:52,024 - INFO - Configuração feita com sucesso
+2021-12-02 11:42:52,025 - INFO - KeyPair and Security group created
+2021-12-02 11:42:52,027 - INFO - Criando instância para us-east-2
+2021-12-02 11:42:54,204 - INFO - Adicionando Tags
+2021-12-02 11:43:40,616 - INFO - Instância criada com sucesso! 
+2021-12-02 11:43:43,132 - INFO - Criando Key pair para us-east-1
+2021-12-02 11:43:44,261 - INFO - Key pair criada com sucesso!
+2021-12-02 11:43:44,896 - INFO - Criando Security Group para us-east-1
+2021-12-02 11:43:47,038 - INFO - Liberando portas de acesso
+2021-12-02 11:43:47,984 - INFO - Security Group criado com sucesso
+2021-12-02 11:43:47,985 - INFO - Configuração feita com sucesso
+2021-12-02 11:43:47,985 - INFO - KeyPair and Security group created
+2021-12-02 11:43:47,989 - INFO - Criando instância para us-east-1
+2021-12-02 11:43:50,550 - INFO - Adicionando Tags
+2021-12-02 11:44:37,395 - INFO - Instância criada com sucesso! 
+2021-12-02 11:44:37,621 - INFO - Apagando Imagem não utilizada
+2021-12-02 11:44:38,649 - INFO - Imagem apagada com sucesso
+2021-12-02 11:44:38,649 - INFO - Criando nova imagem
+2021-12-02 11:44:39,018 - INFO - Imagem criada com sucesso
+2021-12-02 11:44:39,284 - INFO - Esperando a imagem ficar disponível
+2021-12-02 11:49:09,797 - INFO - Imagem pronta para uso
+2021-12-02 11:49:09,799 - INFO - Encerrando instância do Django
+2021-12-02 11:49:10,570 - INFO - Instância encerrada
+2021-12-02 11:49:13,275 - INFO - Load Balancer criado com sucesso
+2021-12-02 11:49:13,275 - INFO - Criando grupos de Destino
+2021-12-02 11:49:13,530 - INFO - Criando Listener
+2021-12-02 11:49:13,923 - INFO - Criando Launch Configuration
+2021-12-02 11:49:14,788 - INFO - Criando Autoscaling
+2021-12-02 11:49:15,856 - INFO - Autoscaling criado com sucesso
+2021-12-02 11:49:15,864 - INFO - Script Concluído

@@ -3,7 +3,7 @@ import os
 import time
 from dotenv import load_dotenv
 from functions import configura_instancia, cria_instancia, cria_scaling,  deleta_scaling
-
+from log import logging
 load_dotenv()
 
 ACCESS_KEY = os.getenv("ACCESS_KEY")
@@ -98,32 +98,41 @@ get_image = ec2_nv.describe_images(
 )
 if len(get_image['Images']):
     print('Apagando Imagem não utilizada')
+    logging.info('Apagando Imagem não utilizada')
     image_id = get_image['Images'][0]['ImageId']
     image = list(ec2_nv_res.images.filter(ImageIds=[image_id]).all())[0]
     image.deregister()
     print('Imagem apagada com sucesso')
+    logging.info('Imagem apagada com sucesso')
 
 print('Criando nova imagem')
+logging.info('Criando nova imagem')
 image_id = ec2_nv.create_image(InstanceId=nv_id, Name=image_tag)
 print('Imagem criada com sucesso')
+logging.info('Imagem criada com sucesso')
 print('ID da Imagem: ', image_id['ImageId'])
 
 
 image = ec2_nv_res.Image(image_id['ImageId'])
 if(image.state == 'pending'):
     print("Esperando a imagem ficar disponível")
+    logging.info("Esperando a imagem ficar disponível")
     while(image.state != 'available'):
         image = ec2_nv_res.Image(image_id['ImageId'])
     print("Imagem pronta para uso")
+    logging.info("Imagem pronta para uso")
 
 
 print('Encerrando instância do Django')
+logging.info('Encerrando instância do Django')
+
 encerrar_instancia = ec2_nv.terminate_instances(
     InstanceIds=[
         nv_id,
     ],
 )
 print('Instância encerrada')
+logging.info('Instância encerrada')
 
 
 cria_scaling(ACCESS_KEY, SECRET_KEY, ec2_nv, lb_nv, sc_nv_id, vpc_nv,
@@ -131,3 +140,4 @@ cria_scaling(ACCESS_KEY, SECRET_KEY, ec2_nv, lb_nv, sc_nv_id, vpc_nv,
 
 
 print("Script Concluído")
+logging.info("Script Concluído")
